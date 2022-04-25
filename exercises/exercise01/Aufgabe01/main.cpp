@@ -1,14 +1,14 @@
 #include <iostream>
 #include <string>
 
-void main()
+int main()
 {
-    String name;
+    std::string name;
 
-    cout << "What is your given name? '
-    std::cin << name;
+	std::cout << "What is your given name? "; 
+	std::cin >> name;
     
-    for(Int count = 0; count = 10; ++count)
-        std::cout<< "Hello " << name "\n";
+    for(int count = 0; count < 10; ++count)
+        std::cout<< "Hello " << name << "\n";
 }
 
