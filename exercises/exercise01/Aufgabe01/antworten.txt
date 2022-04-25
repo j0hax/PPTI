@@ -1,0 +1,2 @@
+e)	Ja, mit `git pull common main`
+f)	Der letzte Commit der auf den Server gepusht wurde war bc8e13bb996fc85415f196d05f9242678a2a2ba6
