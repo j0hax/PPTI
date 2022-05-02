@@ -5,19 +5,44 @@
 
 using Meal = std::tuple<std::string, char, size_t>;
 
+const Meal &getUnhealthier(const Meal &mealA, const Meal &mealB) {
+  // Determine if a meal is twice as "bad"
+  const int aMult = std::get<1>(mealA) == 'E' ? 2 : 1;
+  const int bMult = std::get<1>(mealB) == 'E' ? 2 : 1;
 
-const Meal& getUnhealthier(const Meal& mealA, const Meal& mealB) {
-
-    // TODO: Implement here
-
-    return mealA; // You can change this line
+  if (aMult * std::get<2>(mealA) >= bMult * std::get<2>(mealB)) {
+    return mealA;
+  } else {
+    return mealB;
+  }
 }
 
-void analyzeMeals(std::ostream& os, const std::vector<Meal>& meals)
-{
+void analyzeMeals(std::ostream &os, const std::vector<Meal> &meals) {
+  size_t healthyCount = 0;
+  Meal unhealthiest = meals.front();
 
-    // TODO: Implement here
+  for (const Meal &meal : meals) {
+    char n = std::get<1>(meal);
+    if (n == 'A' || n == 'B') {
+      healthyCount++;
+    } else if (n == 'D' || n == 'E') {
+      unhealthiest = getUnhealthier(unhealthiest, meal);
+    }
+  }
 
-    os << std::endl;  // You can change this line
+  os << "Von " << meals.size() << " Lebensmitteln waren " << healthyCount
+     << " gesund" << std::endl;
+
+  // Analyze unhealthiest meal
+  char n = std::get<1>(unhealthiest);
+  if (n == 'D' || n == 'E') {
+    std::string &name = std::get<0>(unhealthiest);
+    size_t &count = std::get<2>(unhealthiest);
+
+    os << "Es sollte lieber auf das Lebensmittel " << name
+       << " verzichtet werden, es wurde " << count << " mal verzehrt"
+       << std::endl;
+  } else {
+    os << "Super, es waren keine ungesunden Lebensmittel dabei!" << std::endl;
+  }
 }
-
