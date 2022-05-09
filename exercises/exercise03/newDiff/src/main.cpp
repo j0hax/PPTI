@@ -52,14 +52,15 @@ void compareFilesLineByLine(const std::vector<std::string>& lines1,
   // Compare with the fewest elements
   for (; i < shortest.size(); i++) {
     if (lines1[i] != lines2[i]) {
-      std::cout << "<<<" << i << "<<<" << lines1[i] << std::endl;
-      std::cout << ">>>" << i << ">>>" << lines2[i] << std::endl;
+      std::cout << "<<<" << (i+1) << "<<<" << lines1[i] << std::endl;
+      std::cout << ">>>" << (i+1) << ">>>" << lines2[i] << std::endl;
+      std::cout << std::endl;
     }
   }
 
   // publish the rest of the longer file
   for (; i < longest.size(); i++) {
-    std::cout << ">>>" << i << ">>>" << longest[i] << std::endl;
+    std::cout << ">>>" << (i+1) << ">>>" << longest[i] << std::endl;
   }
 }
 #else
