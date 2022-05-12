@@ -1,0 +1,37 @@
+# ignore temporary editor files
+*~
+ 
+# ignore object files
+*.o
+ 
+#ignore dependency files
+*.d
+
+# ignore eclipse project settings
+.project
+.cproject
+.metadata
+.settings
+
+# ignore qtcreator project files
+*.config
+*.creator
+*.creator.user
+*.filesy
+*.includes
+*.cflags
+*.cxxflags
+
+# executables
+Aufgabe*/main
+Aufgabe01/Calculator/calc
+Tutorials/*/main
+Tutorials/*/*/main
+
+newWc/newwc
+newDiff/newdiff
+rps/rps
+graph/graph
+
+# documentation
+*/doc/*
