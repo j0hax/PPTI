@@ -19,9 +19,16 @@ bool montyHallExperiment()
     static std::random_device rd;
     static std::default_random_engine re(rd());
 
-    // TODO: Insert code here
-    // Dummy:
-    return true;
+    // Warum sind std::random_device rd und std::default_random_engine re static?
+    // Antwort: damit der Zustand zwischen Aufrufen erhalten bleibt
+
+    // Choose a door at random
+    std::uniform_int_distribution<int> dist(1, 3);
+    int pick = dist(re);
+
+    // Check if it's right
+    Show show;
+    return show.finalResult(pick);
 }
 
 /**
@@ -30,9 +37,16 @@ bool montyHallExperiment()
  */
 double montyHallExploration(int n)
 {
-    // TODO: Insert code here
-    // Dummy:
-    return 0;
+    // Track sucesses
+    int sucesses = 0;
+
+    for (int i = 0; i < n; ++i) {
+        if (montyHallExperiment()) {
+            sucesses++;
+        }
+    }
+
+    return sucesses / static_cast<double>(n);
 }
 
 /**

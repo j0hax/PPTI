@@ -18,9 +18,15 @@ Show::Show()
 
 int Show::showGoatDoor(int firstGuess)
 {
-    // TODO: Implement Show::getGoatDoor here
-    // Dummy:
-    return 0;
+    std::vector<int> probs = {1, 1, 1};
+
+    // "Remove" our known values
+    probs[firstGuess - 1] = 0;
+    probs[carDoor - 1] = 0;
+
+    std::discrete_distribution<int> dist(probs.begin(), probs.end());
+    
+    return dist(re) + 1;
 }
 
 
