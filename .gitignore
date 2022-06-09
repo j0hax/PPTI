@@ -1,33 +1,37 @@
-# Prerequisites
+# ignore temporary editor files
+*~
+ 
+# ignore object files
+*.o
+ 
+#ignore dependency files
 *.d
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# ignore eclipse project settings
+.project
+.cproject
+.metadata
+.settings
 
-# Precompiled Headers
-*.gch
-*.pch
+# ignore qtcreator project files
+*.config
+*.creator
+*.creator.user
+*.filesy
+*.includes
+*.cflags
+*.cxxflags
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# executables
+Aufgabe*/main
+Aufgabe01/Calculator/calc
+Tutorials/*/main
+Tutorials/*/*/main
 
-# Fortran module files
-*.mod
-*.smod
+newWc/newwc
+newDiff/newdiff
+rps/rps
+graph/graph
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-main
+# documentation
+*/doc/*
