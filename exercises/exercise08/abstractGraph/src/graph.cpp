@@ -115,10 +115,7 @@ void AdjacentGraph::forAllNodes(
 std::size_t ClassicGraph::addEdge(std::size_t nodeId1,
                                   std::size_t nodeId2,
                                   double weight) {
-  ClassicGraph::Edge e;
-  e.node1 = nodeId1;
-  e.node2 = nodeId2;
-  e.weight = weight;
+  ClassicGraph::Edge e(nodeId1, nodeId2, weight);
   this->edges.push_back(e);
   return this->edges.size();
 }

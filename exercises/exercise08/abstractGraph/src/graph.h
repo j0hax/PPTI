@@ -104,11 +104,14 @@ class ClassicGraph : public Graph {
   void forAllNodes(
       const std::function<void(std::size_t nodeId)>& function) const;
 
+protected:
   class Edge {
    public:
-    double weight;
     size_t node1;
     size_t node2;
+    double weight;
+    Edge() {}
+    Edge(size_t nodeId1, size_t nodeId2, double w) : node1(nodeId1), node2(nodeId2), weight(w) {}
   };
 
   class Node {
