@@ -1,7 +1,7 @@
 #include <iostream>
 #include "graph.h"
 
-// #define BONUS // Uncomment this for additional bonus solution
+#define BONUS  // Uncomment this for additional bonus solution
 
 int main() {
   std::vector<std::unique_ptr<Graph>> graphs;

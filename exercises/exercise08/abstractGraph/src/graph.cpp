@@ -46,7 +46,7 @@ std::tuple<std::size_t, std::size_t> AdjacentGraph::getAdjacentNodeIds(
     std::size_t edgeId) const {
   // Get "coordinates" from the ID
   size_t r = 0;
-  while ((r+1) * this->weights.size() <= edgeId) {
+  while ((r + 1) * this->weights.size() <= edgeId) {
     r += 1;
   }
   size_t c = edgeId - (r * this->weights.size());
