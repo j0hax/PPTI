@@ -5,14 +5,14 @@
 
 #include "tgaimage.h"
 
-namespace RunLengthEncoding
-{
-    void encode(const std::string& inputFilename, const std::string& outputFilename);
-    void encode(const TGAImage& inputImage, const std::string& outputFilename);
+namespace RunLengthEncoding {
+void encode(const std::string& inputFilename,
+            const std::string& outputFilename);
+void encode(const TGAImage& inputImage, const std::string& outputFilename);
 
-    void decode(const std::string& inputFilename, const std::string& outputFilename);
-    TGAImage decode(const std::string& inputFilename);
-}
+void decode(const std::string& inputFilename,
+            const std::string& outputFilename);
+TGAImage decode(const std::string& inputFilename);
+}  // namespace RunLengthEncoding
 
-#endif // RUNLENGTHENCODING_H
-
+#endif  // RUNLENGTHENCODING_H
